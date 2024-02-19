@@ -1,0 +1,50 @@
+#include "sort.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+/**
+ * insertion_sort_list - Sorts a doubly linked list of integers
+ *                       using the insertion sort algorithm.
+ * @list: ptr to the head of doubly-linked list of integers.
+ *
+ * Description: Prints the list after each swap.
+ */
+void insertion_sort_list(listint_t **list)
+{
+	listint_t *iter, *insert, *tmp;
+
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
+		return;
+
+	for (iter = (*list)->next; iter != NULL; iter = tmp)
+	{
+		tmp = iter->next;
+		insert = iter->prev;
+		while (insert != NULL && iter->n < insert->n)
+		{
+			swap_nodes(list, &insert, iter);
+			print_list((const listint_t *)*list);
+		}
+	}
+}
+
+/**
+ * swap_nodes - Swap two nodes in a listint_t doubly-linked list.
+ * @h: ptr to the head of the doubly-linked list.
+ * @n: ptr to the first node to swap.
+ * @n1: The second node to swap.
+ */
+void swap_nodes(listint_t **h, listint_t **n, listint_t *n1)
+{
+	(*n)->next = n1->next;
+	if (n1->next != NULL)
+		n1->next->prev = *n;
+	n1->prev = (*n)->prev;
+	n1->next = *n;
+	if ((*n)->prev != NULL)
+		(*n)->prev->next = n1;
+	else
+		*h = n1;
+	(*n)->prev = n1;
+	*n = n1->prev;
+}

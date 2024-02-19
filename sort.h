@@ -40,5 +40,9 @@ void print_list(const listint_t *list);
 
 /* Sorting algoritms */
 void bubble_sort(int *array, size_t size);
+void insertion_sort_list(listint_t **list);
+void int_swap(int *x, int *y);
+void selection_sort(int *array, size_t size);
+void swap_nodes(listint_t **h, listint_t **n, listint_t *n1);
 
 #endif /* SORT_H */
