@@ -22,7 +22,7 @@ void selection_sort(int *array, size_t size)
 	{
 		a = array + k;
 		for (l = k + 1; l < size; l++)
-			a = (array[l] < *a) ? (array + k) : a;
+			a = (array[l] < *a) ? (array + l) : a;
 
 		if ((array + k) != a)
 		{
@@ -32,10 +32,8 @@ void selection_sort(int *array, size_t size)
 	}
 }
 
-#include "sort.h"
-
 /**
- * int_swap - Swap two integers in an array.
+ * int_swap - Swaps two integers in an array.
  * @x: First integer to swap.
  * @y: Second integer to swap.
  */
