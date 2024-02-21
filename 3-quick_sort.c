@@ -41,7 +41,7 @@ void lomuto_sort(int *array, size_t size, int left, int right)
 
 /**
  * lomuto_partition - Partitions a subset of an array of integers using
- *                    the lomuto partition scheme with the last element as pivot).
+ * the lomuto partition scheme with the last element as pivot).
  * @array: Array of integers.
  * @size: Size of the array.
  * @left: The starting index of the subset to order.
