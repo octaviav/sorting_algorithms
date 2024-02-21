@@ -5,7 +5,7 @@
  * @x: First integer to swap.
  * @y: Second integer to swap.
  */
-void ints(int *x, int *y)
+void int_swap(int *x, int *y)
 {
 	int tmp;
 
